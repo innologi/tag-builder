@@ -172,7 +172,7 @@ class Tag extends TagAbstract
         }
         $output = '<' . $this->tagName;
         foreach ($this->attributes as $attribute => $value) {
-            $output .= ' ' . $attribute . '="' . htmlspecialchars($value) . '"';
+            $output .= ' ' . $attribute . '="' . htmlspecialchars((string) $value) . '"';
         }
         if ($this->hasContent() || $this->forceClosingTag) {
             $output .= '>' . ($this->content ?? '') . '</' . $this->tagName . '>';
